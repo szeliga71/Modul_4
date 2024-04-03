@@ -48,7 +48,7 @@ public class PaswordValidatorTest {
 
     @Test
 
-    public void hasNoRepetitionsTest(){
+   public void hasNoRepetitionsTest(){
 
         Assertions.assertTrue(passwordValidator.hasNoRepetitions("qwertz"));
 
@@ -68,17 +68,17 @@ public class PaswordValidatorTest {
 
     public void hasNumbersTest(){
 
-        Assertions.assertTrue(passwordValidator.hasNoRepetitions("pass8word"));
+        Assertions.assertTrue(passwordValidator.hasNumbers("pass8word"));
 
-        Assertions.assertTrue(passwordValidator.hasNoRepetitions("2password"));
+        Assertions.assertTrue(passwordValidator.hasNumbers("2password"));
 
-        Assertions.assertTrue(passwordValidator.hasNoRepetitions("password3"));
+        Assertions.assertTrue(passwordValidator.hasNumbers("password3"));
 
-        Assertions.assertTrue(passwordValidator.hasNoRepetitions("pa2ssw9ord"));
+        Assertions.assertTrue(passwordValidator.hasNumbers("pa2ssw9ord"));
 
-        Assertions.assertTrue(passwordValidator.hasNoRepetitions("2password7"));
+        Assertions.assertTrue(passwordValidator.hasNumbers("2password7"));
 
-        Assertions.assertTrue(passwordValidator.hasNoRepetitions("24password"));
+        Assertions.assertTrue(passwordValidator.hasNumbers("24password"));
 
         Assertions.assertFalse(passwordValidator.hasNumbers("password"));
 

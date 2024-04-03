@@ -22,8 +22,31 @@ public class PasswordValidator {
     }
 
     public boolean hasNoRepetitions(String password){
-        return true;
+
+        boolean hasNoRepetitions=true;
+
+        if(password.length()==0){
+
+            hasNoRepetitions=false;
+        }else{
+
+            int i=0;
+
+           while((i+1)<password.length()){
+
+                if(password.charAt(i)==password.charAt(i+1)){
+
+                    hasNoRepetitions=false;
+                }
+                i++;
+            }
+        }
+
+return hasNoRepetitions;
     }
+
+
+
 
     public boolean hasNumbers(String password) {
 
@@ -32,7 +55,7 @@ public class PasswordValidator {
         for (int i = 0; i < password.length(); i++) {
             if (Character.isDigit(password.charAt(i))) {
                 hasNumber = true;
-                break;
+
             }
         }
             return hasNumber;
