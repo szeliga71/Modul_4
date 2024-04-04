@@ -50,6 +50,8 @@ public class PaswordValidatorTest {
 
    public void hasNoRepetitionsTest(){
 
+
+
         Assertions.assertTrue(passwordValidator.hasNoRepetitions("qwertz"));
 
         Assertions.assertFalse(passwordValidator.hasNoRepetitions("password"));

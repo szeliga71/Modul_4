@@ -7,74 +7,47 @@ public class PasswordValidator {
     }
 
     public  boolean hasNoWhiteSpaces(String password){
-
-        boolean hasNoWhiteSpace=true;
-
         for(int i=0;i<password.length();i++){
             if(Character.isWhitespace(password.charAt(i))){
-                hasNoWhiteSpace= false;
-
-
+                return false;
             }
         }
-
-    return hasNoWhiteSpace;
+        return true;
     }
-
     public boolean hasNoRepetitions(String password){
 
-        boolean hasNoRepetitions=true;
-
-        if(password.length()==0){
-
-            hasNoRepetitions=false;
-        }else{
-
-            int i=0;
-
-           while((i+1)<password.length()){
-
-                if(password.charAt(i)==password.charAt(i+1)){
-
-                    hasNoRepetitions=false;
-                }
-                i++;
-            }
+        if(password.length()==0) {
+            return false;
         }
+            for(int i=1;i<password.length();i++){
 
-return hasNoRepetitions;
+                if(password.charAt(i)==password.charAt(i-1)){
+
+                     return false;
+                }
+            }
+            return true;
     }
-
-
-
 
     public boolean hasNumbers(String password) {
 
-        boolean hasNumber = false;
-
         for (int i = 0; i < password.length(); i++) {
             if (Character.isDigit(password.charAt(i))) {
-                hasNumber = true;
-
+                return true;
             }
         }
-            return hasNumber;
-
+            return false;
     }
 
     public boolean hasSpecialCharacter(String password){
 
         String specialCharacters = "!.@-;”(){}[]?";
 
-        boolean hasSpecialCharacter=false;
-
         for (int i = 0; i < password.length(); i++) {
             if (specialCharacters.contains(String.valueOf(password.charAt(i)))){
-            hasSpecialCharacter= true; }
+            return true; }
         }
-
-
-    return hasSpecialCharacter;
+        return false;
     }
 
 }
